@@ -1,2 +1,2 @@
 # codelearning
-To learn coding
+To learn codeing
