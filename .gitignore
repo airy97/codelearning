@@ -13,3 +13,12 @@ cpp/cpp/Debug/cpp.tlog/cpp.lastbuildstate
 cpp/cpp/Debug/cpp.tlog/link.command.1.tlog
 cpp/cpp/Debug/cpp.tlog/link.read.1.tlog
 cpp/cpp/Debug/cpp.tlog/link.write.1.tlog
+*.ipch
+*.recipe
+*.log
+*.obj
+*.idb
+*.pdb
+*.tlog
+*.exe
+*.ilk
