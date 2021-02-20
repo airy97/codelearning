@@ -22,3 +22,5 @@ cpp/cpp/Debug/cpp.tlog/link.write.1.tlog
 *.tlog
 *.exe
 *.ilk
+cpp/cpp/x64/Debug/CodeAnalysisResultManifest.txt
+cpp/cpp/x64/
