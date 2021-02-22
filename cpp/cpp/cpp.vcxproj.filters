@@ -30,6 +30,9 @@
     <ClCompile Include="MyQsort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="LC1_TwoSum.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -42,6 +45,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="MyQsort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LC1_TwoSum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LC2_AddTwoNumbers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LC3_LSWRC.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

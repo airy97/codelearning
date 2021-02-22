@@ -4,6 +4,7 @@
 #include <map>
 #include <unordered_map>
 #include <stack>
+#include <queue>
 #include <set>
 #include <memory>
 #include "Test.h"
@@ -12,60 +13,24 @@
 #include <ctime>
 #define _USE_MATH_DEFINES
 #include <math.h>
+#include "LC1_TwoSum.h"
+#include "LC3_LSWRC.h"
 
 using namespace std;
 
 void TestLCS(const clist&, const clist&);
 void AutoTestLCS();
-void testtry();
-void testcatch();
 void MyQsortTest();
-Test CreatTest(const Test& tt)
-{
-	Test t = tt;
-	t.add();
-	return t;
-}
 
 
 int main()
 {
-	Test t = 1;
-	vector<int>::iterator iter;
+	string s = "pwwkew";
+	int n = LC3_LSWRC().lengthOfLongestSubstring(s);
+	cout << n;
 	system("pause");
-=======
-
-using namespace std;
-
-int main()
-{
-	struct ListNode
-	{
-		int val;
-		ListNode* next;
-		ListNode(int x) : val(x), next(NULL) {}
-	};
-	ListNode *head = new ListNode(1);
-	ListNode *n2 = new ListNode(2);
-	ListNode *n3 = new ListNode(3);
-	head->next = n2;
-	n2->next = n3;
-
-	vector<int> vet;
-	while (head != NULL)
-	{
-		vet.push_back(head->val);
-		head = head->next;
-	}
-	vector<int> res;
-	for (int i = 0; i < vet.size(); ++i)
-	{
-		res.push_back(vet.at(vet.size() - i - 1));
-	}
-
->>>>>>> b7c80f2dc760ebc1a28fd2f8598510fb89e73a58
-	return 0;
 }
+
 
 void TestLCS(const clist& list1, const clist& list2)
 {
@@ -132,29 +97,6 @@ void MyQsortTest()
 			count = 0;
 		}
 	}
-}
-
-void testtry()
-{
-	vector<int> temp;
-	if (true)
-	{
-		throw exception();
-	}
-	std::cout << "trytest Success!" << endl;
-}
-
-void testcatch()
-{
-	try
-	{
-		testtry();
-	}
-	catch (const exception& e)
-	{
-		std::cout << "Success!" << endl;
-	}
-	std::cout << "Catchtest Success!" << endl;
 }
 
 
