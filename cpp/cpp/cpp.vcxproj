@@ -144,6 +144,7 @@
     <ClCompile Include="LC1_TwoSum.cpp" />
     <ClCompile Include="LCS.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyBinarySearchTree.cpp" />
     <ClCompile Include="MyQsort.cpp" />
     <ClCompile Include="Solution43.cpp" />
     <ClCompile Include="Test.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="LC2_AddTwoNumbers.h" />
     <ClInclude Include="LC3_LSWRC.h" />
     <ClInclude Include="LCS.h" />
+    <ClInclude Include="MyBinarySearchTree.h" />
     <ClInclude Include="MyQsort.h" />
     <ClInclude Include="Solution43.h" />
     <ClInclude Include="Test.h" />

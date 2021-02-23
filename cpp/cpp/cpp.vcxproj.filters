@@ -33,6 +33,9 @@
     <ClCompile Include="LC1_TwoSum.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MyBinarySearchTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -54,6 +57,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="LC3_LSWRC.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyBinarySearchTree.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

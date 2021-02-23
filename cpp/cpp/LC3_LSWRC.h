@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include <vector>
-#include <unordered_map>
 #include <unordered_set>
 using std::vector;
 using std::string;
@@ -10,26 +9,51 @@ using std::unordered_set;
 class LC3_LSWRC {
 public:
 	int lengthOfLongestSubstring(string s) {
-		if (s.size() <= 1)
+		int n = s.size();
+		if (n <= 1)
+			return n;
+		int left = 0;
+		int right = 1;
+		int max = 1;
+		unordered_set<char> hashtable{ s[0] };
+		while (right < n)
 		{
-			return s.size();
-		}
-		vector<int> lengthtable(s.size(), 1);
-		for (int i = 1; i < s.size(); ++i)
-		{
-			unordered_set<char> hashtable;
-			hashtable.insert(s[i]);
-			for (int j = i - 1; j >= 0; --j)
+			if (!hashtable.count(s[right]))
 			{
-				if (hashtable.count(s[j]) == 0)
+				hashtable.insert(s[right]);
+				++right;
+				if ((right - left) > max)
 				{
-					hashtable.insert(s[j]);
+					max = right - left;
 				}
-				else
-					break;
 			}
-			lengthtable[i] = max(lengthtable[i - 1], (int)hashtable.size());
+			else
+			{
+				hashtable.erase(s[left]);
+				++left;
+			}
 		}
-		return lengthtable[s.size() - 1];
+		return max;
+	}
+
+	//考虑到ASCII只有127个，可直接搭建hash表
+	int lengthOfLongestSubstringASCII(string s) {
+		vector<int> charrope(127, -1);
+		int left = -1;
+		int maxlength = 0;
+		for (int right = 0; right < s.size(); ++right)
+		{
+			if (charrope[s[right]] > left)
+			{
+				left = charrope[s[right]];
+				charrope[s[right]] = right;
+			}
+			else
+			{
+				charrope[s[right]] = right;
+				maxlength = (right - left) > maxlength ? (right - left) : maxlength;
+			}
+		}
+		return maxlength;
 	}
 };

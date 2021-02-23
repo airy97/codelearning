@@ -25,8 +25,8 @@ void MyQsortTest();
 
 int main()
 {
-	string s = "pwwkew";
-	int n = LC3_LSWRC().lengthOfLongestSubstring(s);
+	string s = "tmmzuxt";
+	int n = LC3_LSWRC().lengthOfLongestSubstringASCII(s);
 	cout << n;
 	system("pause");
 }
