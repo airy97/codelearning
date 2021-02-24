@@ -75,7 +75,8 @@ int LCS::getlongestlength()
 {
 	return m_longestlist[m_list1.size()][m_list2.size()];
 }
-clist LCS::getlongestclist()
+
+LCS::clist LCS::getlongestclist()
 {
 	vector<int> indexs;
 	int index = m_list1endlist[m_list1.size()][m_list2.size()];

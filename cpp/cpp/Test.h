@@ -1,17 +1,29 @@
 #pragma once
-class Test
+#include <iostream>
+#include <vector>
+#include <map>
+#include <unordered_map>
+#include <stack>
+#include <queue>
+#include <set>
+#include <memory>
+#include "LCS.h"
+#include "MyQsort.h"
+#include <ctime>
+#include <math.h>
+#include "LC1_TwoSum.h"
+#include "LC3_LSWRC.h"
+#include "MyBinarySearchTree.h"
+#define _USE_MATH_DEFINES
+namespace Test
 {
-	int _t;
-public:
-	Test(int i = 0);
-	Test(double i = 0);
-	~Test();
-	Test(const Test& t);
-	Test(const Test&& t);
-	Test& operator=(const Test& t);
-	Test& operator=(const Test&& t);
-	void print();
-	void add(int i = 1);
+	void TestLCS(const LCS::clist&, const LCS::clist&);
+	void AutoTestLCS();
 
+	void MyQsortTest();
+
+	void TestLC3_LSWRC();
+
+	void test_MyBinarySearchTree();
 };
 

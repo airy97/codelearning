@@ -1,14 +1,12 @@
 #pragma once
 #include <vector>
-
-
-using namespace std;
-typedef vector<char> clist;
-
+using std::pair;
+using std::vector;
+//最长公共子序列
 class LCS
 {
-	//最长公共子序列
 public:
+	typedef vector<char> clist;
 	LCS(const clist& list1 = clist(), const clist& list2 = clist());
 	~LCS();
 	int getlongestlength();

@@ -1,16 +1,29 @@
 #include "MyBinarySearchTree.h"
-#include <iostream>
+#include <algorithm>
+#include <math.h>
 
 MyBinarySearchTree::MyBinarySearchTree()
 {
-	root = nullptr;
-	degree = 0;
+	treesize = 0;
 }
 
-MyBinarySearchTree::MyBinarySearchTree(Node* pNode)
+MyBinarySearchTree::MyBinarySearchTree(_Kty k)
+{
+	treesize = 0;
+	insert(k);
+}
+
+MyBinarySearchTree::MyBinarySearchTree(NodePtr pNode)
 {
 	root = pNode;
-	degree = 1;
+	treesize = 1;
+}
+
+
+MyBinarySearchTree::MyBinarySearchTree(const std::vector<_Kty>& datalist)
+{
+	treesize = 0;
+	insert(datalist);
 }
 
 MyBinarySearchTree::~MyBinarySearchTree()
@@ -23,23 +36,80 @@ bool MyBinarySearchTree::empty()
 	return (bool)root;
 }
 
-void MyBinarySearchTree::Inorder_Tree_Wark(Node* pNode)
+int MyBinarySearchTree::size()
+{
+	return treesize;
+}
+
+void MyBinarySearchTree::print()
+{
+	std::cout << "\nDate in My Binary Search Tree: ";
+	Inorder_Tree_Wark(root);
+	std::cout << std::endl;
+}
+
+void MyBinarySearchTree::printInfo()
+{
+	std::cout << "tree size: " << size() << ", tree height: " << hight() << std::endl;
+}
+
+void MyBinarySearchTree::insert(_Kty k)
+{
+	treesize += Tree_Insert(root, std::make_shared<MyBinarySearchTree::Node>(k)) ? 1 : 0;
+}
+
+void MyBinarySearchTree::insert(const std::vector<_Kty>& datalist)
+{
+	for (const auto& data : datalist)
+	{
+		insert(data);
+	}
+}
+
+void MyBinarySearchTree::random_insert(std::vector<_Kty> datalist)
+{
+	std::random_shuffle(datalist.begin(), datalist.end());
+	insert(datalist);
+}
+
+void MyBinarySearchTree::erase(_Kty k)
+{
+	NodePtr pNode = Tree_Search(root, k);
+	if (pNode != nullptr)
+	{
+		Tree_Delete(root, pNode);
+		--treesize;
+	}
+}
+
+void MyBinarySearchTree::clear()
+{
+	root = nullptr;
+	treesize = 0;
+}
+
+int MyBinarySearchTree::hight()
+{
+	return Tree_Hight(root) - 1;
+}
+
+void MyBinarySearchTree::Inorder_Tree_Wark(NodePtr pNode)
 {
 	if (pNode != nullptr)
 	{
 		Inorder_Tree_Wark(pNode->left);
-		std::cout << pNode->key << "; ";
+		std::cout << pNode->key << ", ";
 		Inorder_Tree_Wark(pNode->right);
 	}
 }
 
-MyBinarySearchTree::Node* MyBinarySearchTree::Tree_Search(Node* pNode, const _Kty& k)
+MyBinarySearchTree::NodePtr MyBinarySearchTree::Tree_Search(NodePtr pNode, const _Kty& k)
 {
 	if (!pNode || pNode->key == k)
 	{
 		return pNode;
 	}
-	else if (pNode->key < k)
+	else if (k < pNode->key)
 	{
 		return Tree_Search(pNode->left, k);
 	}
@@ -49,7 +119,7 @@ MyBinarySearchTree::Node* MyBinarySearchTree::Tree_Search(Node* pNode, const _Kt
 	}
 }
 
-MyBinarySearchTree::Node* MyBinarySearchTree::Iterative_Tree_Search(Node* pNode, const _Kty& k)
+MyBinarySearchTree::NodePtr MyBinarySearchTree::Iterative_Tree_Search(NodePtr pNode, const _Kty& k)
 {
 	while (!pNode || pNode->key == k)
 	{
@@ -65,7 +135,7 @@ MyBinarySearchTree::Node* MyBinarySearchTree::Iterative_Tree_Search(Node* pNode,
 	return pNode;
 }
 
-MyBinarySearchTree::Node* MyBinarySearchTree::Tree_Minimun(Node* pNode)
+MyBinarySearchTree::NodePtr MyBinarySearchTree::Tree_Minimun(NodePtr pNode)
 {
 	if (pNode)
 	{
@@ -77,7 +147,7 @@ MyBinarySearchTree::Node* MyBinarySearchTree::Tree_Minimun(Node* pNode)
 	return pNode;
 }
 
-MyBinarySearchTree::Node* MyBinarySearchTree::Tree_Maximun(Node* pNode)
+MyBinarySearchTree::NodePtr MyBinarySearchTree::Tree_Maximun(NodePtr pNode)
 {
 	if (pNode)
 	{
@@ -89,7 +159,7 @@ MyBinarySearchTree::Node* MyBinarySearchTree::Tree_Maximun(Node* pNode)
 	return pNode;
 }
 
-MyBinarySearchTree::Node* MyBinarySearchTree::Tree_Successor(Node* pNode)
+MyBinarySearchTree::NodePtr MyBinarySearchTree::Tree_Successor(NodePtr pNode)
 {
 	if (!pNode)
 		return pNode;
@@ -97,7 +167,7 @@ MyBinarySearchTree::Node* MyBinarySearchTree::Tree_Successor(Node* pNode)
 	{
 		return Tree_Minimun(pNode->right);
 	}
-	Node* pRightNode = pNode->p;
+	NodePtr pRightNode = pNode->p;
 	while (pRightNode && pNode == pRightNode->right)
 	{
 		pNode = pRightNode;
@@ -106,21 +176,95 @@ MyBinarySearchTree::Node* MyBinarySearchTree::Tree_Successor(Node* pNode)
 	return pRightNode;
 }
 
-void MyBinarySearchTree::Tree_Insert(Node* pHead, Node* pNode)
+bool MyBinarySearchTree::Tree_Insert(NodePtr& head, NodePtr pNode)
 {
-	if (!pHead)
+	if (!pNode)
+		return false;
+	NodePtr p;
+	NodePtr pHead = head;
+	while (pHead)
 	{
-		pHead = pNode;
-		return;
+		p = pHead;
+		if (pNode->key < pHead->key)
+		{
+			pHead = pHead->left;
+		}
+		else if (pNode->key > pHead->key)
+		{
+			pHead = pHead->right;
+		}
+		else
+		{
+			return false;
+		}
 	}
-	else if (pHead->key == pNode->key)
+	pNode->p = p;
+	if (!p)
 	{
-		pHead->val = pNode->val;
-		return;
+		head = pNode;
 	}
-
+	else if (pNode->key < p->key)
+	{
+		p->left = pNode;
+	}
+	else
+	{
+		p->right = pNode;
+	}
+	return true;
 }
 
-void MyBinarySearchTree::Tree_Delete(Node* pHead, Node* pNode)
+bool MyBinarySearchTree::Tree_Delete(NodePtr& head, NodePtr pNode)
 {
+	if (!pNode->left)
+	{
+		Transplant(head, pNode, pNode->right);
+	}
+	else if (!pNode->right)
+	{
+		Transplant(head, pNode, pNode->left);
+	}
+	else
+	{
+		NodePtr y = Tree_Minimun(pNode->right);
+		if (y->p != pNode)
+		{
+			Transplant(head, y, y->right);
+			y->right = pNode->right;
+			y->right->p = y;
+		}
+		Transplant(head, pNode, y);
+		y->left = pNode->left;
+		y->left->p = y;
+	}
+	return true;
+}
+
+void MyBinarySearchTree::Transplant(NodePtr& root, NodePtr u, NodePtr v)
+{
+	if (!u->p)
+	{
+		root = v;
+	}
+	else if (u == u->p->left)
+	{
+		u->p->left = v;
+	}
+	else
+	{
+		u->p->right = v;
+	}
+	if (v)
+	{
+		v->p = u->p;
+	}
+}
+
+int MyBinarySearchTree::Tree_Hight(NodePtr root)
+{
+	if (!root)
+	{
+		return 0;
+	}
+	return std::max(Tree_Hight(root->left) + 1, Tree_Hight(root->right) + 1);
 }

@@ -13,6 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\MyDataStructure">
+      <UniqueIdentifier>{0566c4b0-519d-45b4-890f-0e5a15e8af69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\MyDataStructure">
+      <UniqueIdentifier>{08d9bc36-9880-4310-86d9-67521a2404ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\LeetCode">
+      <UniqueIdentifier>{38efeeea-cb7f-4b57-88f0-c93b6a7eb4da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\MyAlgorithms">
+      <UniqueIdentifier>{c78d3313-4f6f-43d3-ae9a-805f58f742ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\MyAlgorithms">
+      <UniqueIdentifier>{bbbddc3b-7f24-4b28-b2e4-2eab28334260}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,46 +36,37 @@
     <ClCompile Include="Test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="LCS.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="MyBinarySearchTree.cpp">
+      <Filter>源文件\MyDataStructure</Filter>
     </ClCompile>
-    <ClCompile Include="Solution43.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="LCS.cpp">
+      <Filter>源文件\MyAlgorithms</Filter>
     </ClCompile>
     <ClCompile Include="MyQsort.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LC1_TwoSum.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MyBinarySearchTree.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\MyAlgorithms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="LCS.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Solution43.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="MyQsort.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="MyBinarySearchTree.h">
+      <Filter>头文件\MyDataStructure</Filter>
     </ClInclude>
     <ClInclude Include="LC1_TwoSum.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\LeetCode</Filter>
     </ClInclude>
     <ClInclude Include="LC2_AddTwoNumbers.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\LeetCode</Filter>
     </ClInclude>
     <ClInclude Include="LC3_LSWRC.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\LeetCode</Filter>
     </ClInclude>
-    <ClInclude Include="MyBinarySearchTree.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="MyQsort.h">
+      <Filter>头文件\MyAlgorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="LCS.h">
+      <Filter>头文件\MyAlgorithms</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
