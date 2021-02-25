@@ -79,7 +79,5 @@ void Test::test_MyBinarySearchTree()
 {
 	MyBinarySearchTree tree({2,1,3});
 	tree.printInfo();
-	tree.clear();
-	cout << "\nClear!\n";
-	tree.printInfo();
+	cout << "Test end!";
 }

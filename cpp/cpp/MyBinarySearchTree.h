@@ -11,7 +11,7 @@ public:
 	{
 	public:
 		_Kty key = _Kty();
-		std::shared_ptr<Node> p;
+		std::weak_ptr<Node> p;
 		std::shared_ptr<Node> left;
 		std::shared_ptr<Node> right;
 		Node(_Kty k)

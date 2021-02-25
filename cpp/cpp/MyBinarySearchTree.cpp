@@ -28,7 +28,7 @@ MyBinarySearchTree::MyBinarySearchTree(const std::vector<_Kty>& datalist)
 
 MyBinarySearchTree::~MyBinarySearchTree()
 {
-
+	clear();
 }
 
 bool MyBinarySearchTree::empty()
@@ -167,11 +167,11 @@ MyBinarySearchTree::NodePtr MyBinarySearchTree::Tree_Successor(NodePtr pNode)
 	{
 		return Tree_Minimun(pNode->right);
 	}
-	NodePtr pRightNode = pNode->p;
+	NodePtr pRightNode = pNode->p.lock();
 	while (pRightNode && pNode == pRightNode->right)
 	{
 		pNode = pRightNode;
-		pRightNode = pRightNode->p;
+		pRightNode = pRightNode->p.lock();
 	}
 	return pRightNode;
 }
@@ -227,7 +227,7 @@ bool MyBinarySearchTree::Tree_Delete(NodePtr& head, NodePtr pNode)
 	else
 	{
 		NodePtr y = Tree_Minimun(pNode->right);
-		if (y->p != pNode)
+		if (y->p.lock() != pNode)
 		{
 			Transplant(head, y, y->right);
 			y->right = pNode->right;
@@ -242,17 +242,17 @@ bool MyBinarySearchTree::Tree_Delete(NodePtr& head, NodePtr pNode)
 
 void MyBinarySearchTree::Transplant(NodePtr& root, NodePtr u, NodePtr v)
 {
-	if (!u->p)
+	if (u->p.expired())
 	{
 		root = v;
 	}
-	else if (u == u->p->left)
+	else if (u == u->p.lock()->left)
 	{
-		u->p->left = v;
+		u->p.lock()->left = v;
 	}
 	else
 	{
-		u->p->right = v;
+		u->p.lock()->right = v;
 	}
 	if (v)
 	{
