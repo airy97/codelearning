@@ -3,10 +3,7 @@
 
 int main(int argc, char* argv[])
 {
-	auto starttime = clock();
-	Test::test_MyBinarySearchTree();
-	auto runtime = static_cast<double>(clock() - starttime) / CLOCKS_PER_SEC;
-	std::cout << "\nRun time = " << runtime * 1000.0 << " ms. " << std::endl;
+	Test::measure(Test::test_LC4);
 	system("pause");
 }
 

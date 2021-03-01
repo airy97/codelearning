@@ -151,6 +151,7 @@
     <ClInclude Include="LC1_TwoSum.h" />
     <ClInclude Include="LC2_AddTwoNumbers.h" />
     <ClInclude Include="LC3_LSWRC.h" />
+    <ClInclude Include="LC4_MedianofTwoAortedArrays.h" />
     <ClInclude Include="LCS.h" />
     <ClInclude Include="MyBinarySearchTree.h" />
     <ClInclude Include="MyQsort.h" />

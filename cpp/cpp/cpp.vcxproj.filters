@@ -68,5 +68,8 @@
     <ClInclude Include="LCS.h">
       <Filter>头文件\MyAlgorithms</Filter>
     </ClInclude>
+    <ClInclude Include="LC4_MedianofTwoAortedArrays.h">
+      <Filter>头文件\LeetCode</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
