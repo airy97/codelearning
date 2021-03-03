@@ -1,14 +1,17 @@
 #include "Test.h"
 #include "LC4_MedianofTwoAortedArrays.h"
+#include <random>
 using std::cout;
 using std::endl;
 
-void Test::printvectorint(const std::vector<int>& nums)
+void Test::printvectorint(const std::vector<int>& nums, const std::string& prefix, const std::string& suffix)
 {
+	cout << prefix;
 	for (const auto& num : nums)
 	{
 		cout << num << ", ";
 	}
+	cout << suffix;
 }
 
 void Test::TestLCS(const LCS::clist& list1, const LCS::clist& list2)
@@ -64,7 +67,7 @@ void Test::MyQsortTest()
 	{
 		list.push_back(rand() % 10000);
 	}
-	MyQsort()(list);
+	MyQuickSort()(list);
 	int count = 0;
 	for (auto i : list)
 	{
@@ -123,7 +126,65 @@ void Test::test_LC4()
 	nums2 = { 1 };
 	testfun(nums1, nums2);
 
-	nums1 = {2};
+	nums1 = { 2 };
 	nums2 = {};
 	testfun(nums1, nums2);
+}
+
+void Test::test_MyQuickSort()
+{
+	vector<int> numbers;
+	int n = 20;
+	for (int i = 0; i < 10; ++i)
+	{
+		numbers = getRandomNumbers(n);
+		printvectorint(numbers, "Numbers: ", "\n");
+		MyQuickSort()(numbers);
+		printvectorint(numbers, "Sorted Numbers: ", "\n");
+		bool res = true;
+		for (int j = 0; j < n - 1; ++j)
+		{
+			if (numbers[j + 1] < numbers[j])
+			{
+				res = false;
+			}
+		}
+		cout << (res ? "Succeed!\n" : "Fail!\n");
+		system("pause");
+	}
+}
+
+void Test::test_MyHeapSort()
+{
+	vector<int> numbers;
+	int n = 100;
+	for (int i = 0; i < 10; ++i)
+	{
+		numbers = getRandomNumbers(n);
+		//printvectorint(numbers, "Numbers: ", "\n");
+		MyHeapSort()(numbers);
+		//printvectorint(numbers, "Sorted Numbers: ", "\n");
+		bool res = true;
+		for (int j = 0; j < n - 1; ++j)
+		{
+			if (numbers[j + 1] < numbers[j])
+			{
+				res = false;
+			}
+		}
+		cout << (res ? "Succeed!\n" : "Fail!\n");
+		system("pause");
+	}
+}
+
+vector<int> Test::getRandomNumbers(int n)
+{
+	std::default_random_engine e(time(0));
+	std::uniform_int_distribution<int> u(0, 100);
+	vector<int> numbers(n);
+	for (int i = 0; i < n; ++i)
+	{
+		numbers[i] = u(e);
+	}
+	return numbers;
 }

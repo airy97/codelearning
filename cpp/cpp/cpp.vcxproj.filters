@@ -42,8 +42,8 @@
     <ClCompile Include="LCS.cpp">
       <Filter>源文件\MyAlgorithms</Filter>
     </ClCompile>
-    <ClCompile Include="MyQsort.cpp">
-      <Filter>源文件\MyAlgorithms</Filter>
+    <ClCompile Include="MyRBTree.cpp">
+      <Filter>源文件\MyDataStructure</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,14 +62,20 @@
     <ClInclude Include="LC3_LSWRC.h">
       <Filter>头文件\LeetCode</Filter>
     </ClInclude>
-    <ClInclude Include="MyQsort.h">
-      <Filter>头文件\MyAlgorithms</Filter>
-    </ClInclude>
     <ClInclude Include="LCS.h">
       <Filter>头文件\MyAlgorithms</Filter>
     </ClInclude>
     <ClInclude Include="LC4_MedianofTwoAortedArrays.h">
       <Filter>头文件\LeetCode</Filter>
+    </ClInclude>
+    <ClInclude Include="MyQuickSort.h">
+      <Filter>头文件\MyAlgorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="MyHeapSort.h">
+      <Filter>头文件\MyAlgorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="MyRBTree.h">
+      <Filter>头文件\MyDataStructure</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

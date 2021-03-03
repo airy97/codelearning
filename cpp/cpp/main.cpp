@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[])
 {
-	Test::measure(Test::test_LC4);
+	Test::measure(Test::test_MyHeapSort);
 	system("pause");
 }
 
