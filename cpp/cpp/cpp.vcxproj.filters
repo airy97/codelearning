@@ -77,5 +77,8 @@
     <ClInclude Include="MyRBTree.h">
       <Filter>头文件\MyDataStructure</Filter>
     </ClInclude>
+    <ClInclude Include="MyLCS.h">
+      <Filter>头文件\MyAlgorithms</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
