@@ -1,6 +1,10 @@
 #include "Test.h"
-#include "LC4_MedianofTwoAortedArrays.h"
+#include "LC04_MedianofTwoAortedArrays.h"
 #include <random>
+#include "MyBinTree.h"
+#include "LC54_Offer29.h"
+#include "LC10_reg_Offer19.h"
+#include "LC51_NQueens.h"
 using std::cout;
 using std::endl;
 
@@ -12,6 +16,18 @@ void Test::printvectorint(const std::vector<int>& nums, const std::string& prefi
 		cout << num << ", ";
 	}
 	cout << suffix;
+}
+
+vector<int> Test::getRandomNumbers(int n)
+{
+	std::default_random_engine e(time(0));
+	std::uniform_int_distribution<int> u(0, 100);
+	vector<int> numbers(n);
+	for (int i = 0; i < n; ++i)
+	{
+		numbers[i] = u(e);
+	}
+	return numbers;
 }
 
 void Test::TestLCS(const LCS::clist& list1, const LCS::clist& list2)
@@ -84,7 +100,7 @@ void Test::MyQsortTest()
 void Test::TestLC3_LSWRC()
 {
 	string s = "tmmzuxt";
-	int n = LC3_LSWRC().lengthOfLongestSubstringASCII(s);
+	int n = LC03_LSWRC().lengthOfLongestSubstringASCII(s);
 	cout << n;
 }
 
@@ -107,7 +123,7 @@ void Test::test_LC4()
 		cout << "Nums2: ";
 		printvectorint(nums2);
 		cout << endl;
-		cout << "Median: " << LC4_MedianofTwoAortedArrays().findMedianSortedArrays(nums1, nums2) << endl << endl;
+		cout << "Median: " << LC04_MedianofTwoAortedArrays().findMedianSortedArrays(nums1, nums2) << endl << endl;
 	};
 
 	vector<int> nums1 = { 1,3 };
@@ -177,14 +193,48 @@ void Test::test_MyHeapSort()
 	}
 }
 
-vector<int> Test::getRandomNumbers(int n)
+void Test::test_MyBinTree()
 {
-	std::default_random_engine e(time(0));
-	std::uniform_int_distribution<int> u(0, 100);
-	vector<int> numbers(n);
-	for (int i = 0; i < n; ++i)
+	typedef MyBinTree::nodeptr ptr;
+	ptr head = MyBinTree::getBinTree({ 1,2,3,4,5,6,7 });
+	MyBinTree::postorder_iter(head);
+}
+
+void Test::test_LC54_LCOF_OFFER29()
+{
+	vector<vector<int>> m = { {1, 2, 3, 4} ,{5, 6, 7, 8},{9, 10, 11, 12} };
+	vector<int> res = LC54_Offer29().spiralOrder(m);
+	printvectorint(res);
+}
+
+void Test::test_LC10_reg_Offer19()
+{
+	auto funtest = [](string str1, string reg)
 	{
-		numbers[i] = u(e);
+		cout << str1 << endl;
+		cout << reg << endl;
+		cout << (LC10_reg_Offer19().isMatch(str1, reg) ? "true" : "false") << endl << endl;
+	};
+
+
+	funtest("aa", "a");
+	funtest("aa", "a*");
+	funtest("ab", ".*");
+	funtest("aab", "c*a*b");
+	funtest("mississippi", "mis*is*p*");
+
+}
+
+void Test::test_LC51_NQueens()
+{
+	auto res = LC51_NQueens().solveNQueens(8);
+	for (int i = 0; i < res.size(); ++i)
+	{
+		cout << (i + 1) << " : \n";
+		for (int j = 0; j < res[i].size(); ++j)
+		{
+			cout << res[i][j] << endl;
+		}
+		cout << endl;
 	}
-	return numbers;
 }

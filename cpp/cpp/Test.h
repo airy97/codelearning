@@ -11,8 +11,8 @@
 #include "MyQuickSort.h"
 #include <ctime>
 #include <math.h>
-#include "LC1_TwoSum.h"
-#include "LC3_LSWRC.h"
+#include "LC01_TwoSum.h"
+#include "LC03_LSWRC.h"
 #include "MyBinarySearchTree.h"
 #include <chrono>
 #include "MyQuickSort.h"
@@ -49,5 +49,12 @@ namespace Test
 
 	void test_MyHeapSort();
 
+	void test_MyBinTree();
+
+	void test_LC54_LCOF_OFFER29();
+
+	void test_LC10_reg_Offer19();
+
+	void test_LC51_NQueens();
 };
 

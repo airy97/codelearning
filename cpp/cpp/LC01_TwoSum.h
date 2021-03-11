@@ -3,7 +3,7 @@
 #include <unordered_map>
 using std::vector;
 using std::unordered_map;
-class LC1_TwoSum
+class LC01_TwoSum
 {
 public:
 	vector<int> twoSum(vector<int>& nums, int target) {

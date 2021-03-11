@@ -6,7 +6,7 @@
 #include <iostream>
 #define min(a,b) (((a) < (b)) ? (a) : (b))
 using std::vector;
-class LC4_MedianofTwoAortedArrays {
+class LC04_MedianofTwoAortedArrays {
 	//O(log(m+n))
 public:
 	static int findKthNum(const vector<int>& nums1, const vector<int>& nums2, int k)

@@ -53,20 +53,8 @@
     <ClInclude Include="MyBinarySearchTree.h">
       <Filter>头文件\MyDataStructure</Filter>
     </ClInclude>
-    <ClInclude Include="LC1_TwoSum.h">
-      <Filter>头文件\LeetCode</Filter>
-    </ClInclude>
-    <ClInclude Include="LC2_AddTwoNumbers.h">
-      <Filter>头文件\LeetCode</Filter>
-    </ClInclude>
-    <ClInclude Include="LC3_LSWRC.h">
-      <Filter>头文件\LeetCode</Filter>
-    </ClInclude>
     <ClInclude Include="LCS.h">
       <Filter>头文件\MyAlgorithms</Filter>
-    </ClInclude>
-    <ClInclude Include="LC4_MedianofTwoAortedArrays.h">
-      <Filter>头文件\LeetCode</Filter>
     </ClInclude>
     <ClInclude Include="MyQuickSort.h">
       <Filter>头文件\MyAlgorithms</Filter>
@@ -76,6 +64,30 @@
     </ClInclude>
     <ClInclude Include="MyRBTree.h">
       <Filter>头文件\MyDataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="MyBinTree.h">
+      <Filter>头文件\MyDataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="LC04_MedianofTwoAortedArrays.h">
+      <Filter>头文件\LeetCode</Filter>
+    </ClInclude>
+    <ClInclude Include="LC03_LSWRC.h">
+      <Filter>头文件\LeetCode</Filter>
+    </ClInclude>
+    <ClInclude Include="LC02_AddTwoNumbers.h">
+      <Filter>头文件\LeetCode</Filter>
+    </ClInclude>
+    <ClInclude Include="LC01_TwoSum.h">
+      <Filter>头文件\LeetCode</Filter>
+    </ClInclude>
+    <ClInclude Include="LC10_reg_Offer19.h">
+      <Filter>头文件\LeetCode</Filter>
+    </ClInclude>
+    <ClInclude Include="LC54_Offer29.h">
+      <Filter>头文件\LeetCode</Filter>
+    </ClInclude>
+    <ClInclude Include="LC51_NQueens.h">
+      <Filter>头文件\LeetCode</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

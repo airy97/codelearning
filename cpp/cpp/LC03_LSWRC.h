@@ -6,7 +6,7 @@ using std::vector;
 using std::string;
 using std::unordered_set;
 //无重复字符的最长字串
-class LC3_LSWRC {
+class LC03_LSWRC {
 public:
 	int lengthOfLongestSubstring(string s) {
 		int n = s.size();

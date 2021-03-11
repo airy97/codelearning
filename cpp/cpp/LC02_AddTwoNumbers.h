@@ -1,5 +1,5 @@
 #pragma once
-class LC2_AddTwoNumbers {
+class LC02_AddTwoNumbers {
 public:
 	//Definition for singly-linked list.
 	struct ListNode {

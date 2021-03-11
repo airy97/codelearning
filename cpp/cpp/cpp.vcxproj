@@ -148,12 +148,16 @@
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LC1_TwoSum.h" />
-    <ClInclude Include="LC2_AddTwoNumbers.h" />
-    <ClInclude Include="LC3_LSWRC.h" />
-    <ClInclude Include="LC4_MedianofTwoAortedArrays.h" />
+    <ClInclude Include="LC01_TwoSum.h" />
+    <ClInclude Include="LC02_AddTwoNumbers.h" />
+    <ClInclude Include="LC03_LSWRC.h" />
+    <ClInclude Include="LC04_MedianofTwoAortedArrays.h" />
+    <ClInclude Include="LC10_reg_Offer19.h" />
+    <ClInclude Include="LC51_NQueens.h" />
+    <ClInclude Include="LC54_Offer29.h" />
     <ClInclude Include="LCS.h" />
     <ClInclude Include="MyBinarySearchTree.h" />
+    <ClInclude Include="MyBinTree.h" />
     <ClInclude Include="MyHeapSort.h" />
     <ClInclude Include="MyQuickSort.h" />
     <ClInclude Include="MyRBTree.h" />
