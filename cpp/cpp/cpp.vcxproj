@@ -159,6 +159,7 @@
     <ClInclude Include="MyBinarySearchTree.h" />
     <ClInclude Include="MyBinTree.h" />
     <ClInclude Include="MyHeapSort.h" />
+    <ClInclude Include="MyLCS.h" />
     <ClInclude Include="MyQuickSort.h" />
     <ClInclude Include="MyRBTree.h" />
     <ClInclude Include="Test.h" />

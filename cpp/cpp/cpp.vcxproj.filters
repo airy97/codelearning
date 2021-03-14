@@ -65,6 +65,7 @@
     <ClInclude Include="MyRBTree.h">
       <Filter>头文件\MyDataStructure</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="MyBinTree.h">
       <Filter>头文件\MyDataStructure</Filter>
     </ClInclude>
@@ -88,6 +89,10 @@
     </ClInclude>
     <ClInclude Include="LC51_NQueens.h">
       <Filter>头文件\LeetCode</Filter>
+=======
+    <ClInclude Include="MyLCS.h">
+      <Filter>头文件\MyAlgorithms</Filter>
+>>>>>>> eb236a38063b312fd7214a51218b6070d86aeef6
     </ClInclude>
   </ItemGroup>
 </Project>
