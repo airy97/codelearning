@@ -112,24 +112,27 @@ public:
 	static void postorder_iter(nodeptr head)
 	{
 		pstack pk;
-		pk.push(head);
-		pstack postk;
 		nodeptr p = head;
+		nodeptr pre = nullptr;
 		while (!pk.empty() || p != nullptr)
 		{
-			p = pk.top();
-			pk.pop();
-			if (p != nullptr)
+			while (p)
 			{
-				postk.push(p);
-				pk.push(p->left);
-				pk.push(p->right);
-			}			
-		}
-		while (!postk.empty())
-		{
-			std::cout << postk.top()->val << ", ";
-			postk.pop();
+				pk.push(p);
+				p = p->left;
+			}
+			p = pk.top();
+			if (!p->right || p->right == pre)
+			{
+				std::cout << p->val << ", ";
+				pre = p;
+				p = nullptr;
+				pk.pop();
+			}
+			else
+			{
+				p = p->right;
+			}
 		}
 	}
 };

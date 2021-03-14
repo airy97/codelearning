@@ -197,6 +197,8 @@ void Test::test_MyBinTree()
 {
 	typedef MyBinTree::nodeptr ptr;
 	ptr head = MyBinTree::getBinTree({ 1,2,3,4,5,6,7 });
+	MyBinTree::postorder_recur(head);
+	std::cout << std::endl;
 	MyBinTree::postorder_iter(head);
 }
 
